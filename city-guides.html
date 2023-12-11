@@ -57,12 +57,9 @@
             <li class="nav-item"><a class="nav-link" href="traditional-food.html">Makanan Khas</a></li>
             <li class="nav-item"><a class="nav-link" href="art-culture.html">Kesenian &amp; Budaya</a></li>
             <li>
-              <audio loop autoplay preload="auto" class="embed-responsive-item" id="myAudio">
-                <source src="assets/images/art-culture/audio.mp3" type="audio/mpeg">
-              </audio>
-                <button style="outline: none; cursor: pointer; color: rgba(255, 255, 255, 0.666); border: 0; background-color: rgba(255, 255, 255, 0)" onclick="document.getElementById('myAudio').muted=!document.getElementById('myAudio').muted">
-                  <i class="fi fi-rr-volume-down"></i>
-                </button>
+              <button style="outline: none; cursor: pointer; color: rgba(255, 255, 255, 0.666); border: 0; background-color: rgba(255, 255, 255, 0)">
+                <i id="audio-status" class="fi fi-rr-volume-mute"></i>
+              </button>
             </li>
           </ul>
         </div>
@@ -237,11 +234,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      let vid = document.getElementById("myAudio");
-      vid.volume = 0.05;
-    </script>
-
     
     <script src="assets/js/jquery.min.js"></script>
     
@@ -255,5 +247,32 @@
     <script src="assets/js/select2.min.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var audio = new Audio("assets/images/art-culture/audio.mp3");
+        audio.volume = 0.05
+
+        $('#audio-status').on("click",function(){
+          if($(this).hasClass('fi fi-rr-volume'))
+          {
+            $(this).removeClass('fi fi-rr-volume');
+            $(this).addClass('fi fi-rr-volume-mute');
+            audio.pause();
+          }
+          else
+          {
+            $(this).removeClass('fi fi-rr-volume-mute');
+            $(this).addClass('fi fi-rr-volume');
+            audio.play();
+          }
+        });
+
+        audio.onended = function() {
+          audio.play()
+        };
+      });
+      
+    </script>
 	</body>
 </html>
