@@ -39,20 +39,22 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
       <div class="container">
-        <a class="navbar-brand" href="/">Places</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-menu" aria-controls="probootstrap-menu" aria-expanded="false" aria-label="Toggle navigation">
-          <span><i class="ion-navicon"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="probootstrap-menu">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Welcome</a></li>
+        <a class="navbar-brand" href="/">Sumenep</a>
+        <div class="collapse navbar-collapse align-content-center" id="probootstrap-menu">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Welcome</a></li>
             <li class="nav-item"><a class="nav-link" href="history.html">Sejarah</a></li>
             <li class="nav-item"><a class="nav-link" href="city-guides.html">Destinasi</a></li>
             <li class="nav-item"><a class="nav-link" href="traditional-food.html">Makanan Khas</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Kesenian & Budaya</a></li>
-
-
-            <!-- <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li> -->
+            <li class="nav-item active"><a class="nav-link" href="art-culture.html">Kesenian &amp; Budaya</a></li>
+            <li>
+              <audio loop autoplay preload="auto" class="embed-responsive-item" id="myAudio">
+                <source src="assets/images/art-culture/audio.mp3" type="audio/mpeg">
+              </audio>
+                <button style="outline: none; cursor: pointer; color: rgba(255, 255, 255, 0.666); border: 0; background-color: rgba(255, 255, 255, 0)" onclick="document.getElementById('myAudio').muted=!document.getElementById('myAudio').muted">
+                  <i class="fi fi-rr-volume-down"></i>
+                </button>
+            </li>
           </ul>
         </div>
       </div>

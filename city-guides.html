@@ -32,6 +32,8 @@
 
     <link rel="stylesheet" href="assets/css/helpers.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
 	</head>
   <style>
@@ -46,20 +48,22 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
       <div class="container">
-        <a class="navbar-brand" href="/">Places</a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-menu" aria-controls="probootstrap-menu" aria-expanded="false" aria-label="Toggle navigation">
-          <span><i class="ion-navicon"></i></span>
-        </button> -->
-        <div class="collapse navbar-collapse" id="probootstrap-menu">
-          <ul class="navbar-nav ml-auto">
+        <a class="navbar-brand" href="/">Sumenep</a>
+        <div class="collapse navbar-collapse align-content-center" id="probootstrap-menu">
+          <ul class="navbar-nav ml-auto align-items-center">
             <li class="nav-item"><a class="nav-link" href="index.html">Welcome</a></li>
             <li class="nav-item"><a class="nav-link" href="history.html">Sejarah</a></li>
             <li class="nav-item active"><a class="nav-link" href="city-guides.html">Destinasi</a></li>
             <li class="nav-item"><a class="nav-link" href="traditional-food.html">Makanan Khas</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Kesenian & Budaya</a></li>
-
-
-            <!-- <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="art-culture.html">Kesenian &amp; Budaya</a></li>
+            <li>
+              <audio loop autoplay preload="auto" class="embed-responsive-item" id="myAudio">
+                <source src="assets/images/art-culture/audio.mp3" type="audio/mpeg">
+              </audio>
+                <button style="outline: none; cursor: pointer; color: rgba(255, 255, 255, 0.666); border: 0; background-color: rgba(255, 255, 255, 0)" onclick="document.getElementById('myAudio').muted=!document.getElementById('myAudio').muted">
+                  <i class="fi fi-rr-volume-down"></i>
+                </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -189,7 +193,7 @@
       </div>
     </section>
 
-    <section class="probootstrap_section" id="section-feature-testimonial">
+    <!-- <section class="probootstrap_section" id="section-feature-testimonial">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-12 text-center mb-5 probootstrap-animate">
@@ -209,17 +213,34 @@
         </div>
         
       </div>
-    </section>
+    </section> -->
     <!-- END section -->
 
     <footer class="probootstrap_section probootstrap-border-top">
       <div class="container">
-        <div class="col-md-12 text-center">
-          <p class="probootstrap_font-14">&copy; 2017. All Rights Reserved. <br> Designed &amp; Developed by <a href="https://probootstrap.com/" target="_blank">ProBootstrap</a><small> (Don't remove credit link on this footer. See <a href="https://probootstrap.com/license/">license</a>)</small></p>
-          <p class="probootstrap_font-14">Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="probootstrap_font-14">
+              &copy; 2023. Visit Sumenep Reborn<br> Designed &amp; Developed by &colon;
+              <!-- <ul> -->
+                <span>Bernadette Graciela - 221180529</span> &semi;
+                <span>Julio Setiono - 221180539</span> &semi;
+                <span>Fransisca Arensa - 221180532</span> &semi;
+                <span>Michael Setiawan - 221180542</span>
+              <!-- </ul> -->
+            </p>
+            <div class="row align-content-center justify-content-center">
+              <i class="fi fi-brands-instagram p-1" style="color: rgb(2, 206, 2);"></i>
+              <a href="https://www.instagram.com/visitsumenepcom" class="">visitsumenepcom</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
+    <script>
+      let vid = document.getElementById("myAudio");
+      vid.volume = 0.05;
+    </script>
 
     
     <script src="assets/js/jquery.min.js"></script>
