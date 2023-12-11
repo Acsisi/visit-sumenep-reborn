@@ -50,7 +50,11 @@
                <li class="nav-item"><a class="nav-link" href="city-guides.html">Destinasi</a></li>
                <li class="nav-item"><a class="nav-link" href="traditional-food.html">Makanan Khas</a></li>
                <li class="nav-item"><a class="nav-link" href="art-culture.html">Kesenian & Budaya</a></li>
-
+               <li>
+                  <button style="outline: none; cursor: pointer; color: rgba(255, 255, 255, 0.666); border: 0; background-color: rgba(255, 255, 255, 0)">
+                    <i id="audio-status" class="fi fi-rr-volume-mute"></i>
+                  </button>
+                </li>
 
                <!-- <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li> -->
             </ul>
@@ -75,5 +79,32 @@
       <script src="assets/js/select2.min.js"></script>
 
       <script src="assets/js/main.js"></script>
+
+      <script>
+         document.addEventListener('DOMContentLoaded', function () {
+           var audio = new Audio("assets/images/art-culture/audio.mp3");
+           audio.volume = 0.05
+   
+           $('#audio-status').on("click",function(){
+             if($(this).hasClass('fi fi-rr-volume'))
+             {
+               $(this).removeClass('fi fi-rr-volume');
+               $(this).addClass('fi fi-rr-volume-mute');
+               audio.pause();
+             }
+             else
+             {
+               $(this).removeClass('fi fi-rr-volume-mute');
+               $(this).addClass('fi fi-rr-volume');
+               audio.play();
+             }
+           });
+   
+           audio.onended = function() {
+             audio.play()
+           };
+         });
+         
+       </script>
 	</body>
 </html>

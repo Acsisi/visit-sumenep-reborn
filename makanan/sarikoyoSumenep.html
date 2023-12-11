@@ -34,38 +34,38 @@
 
     <link rel="stylesheet" href="../assets/css/helpers.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
-</head>
-<style>
-    .img_crop {
-        object-fit: cover;
-        object-position: center center;
-        height: 300px;
+	</head>
+  <style>
+    .img_crop{
+      object-fit: cover;
+      object-position: center center;
+      height: 300px;
     }
-</style>
-
-<body>
-
+  </style>
+	<body>
+  
 
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="/">Sumenep</a>
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-menu" aria-controls="probootstrap-menu" aria-expanded="false" aria-label="Toggle navigation">
-          <span><i class="ion-navicon"></i></span>
-        </button> -->
-            <div class="collapse navbar-collapse" id="probootstrap-menu">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="../../index.html">Welcome</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../history.html">Sejarah</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../city-guides.html">Destinasi</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="../../traditional-food.html">Makanan Khas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../art-culture.html">Kesenian & Budaya</a></li>
-
-
-                    <!-- <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li> -->
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="/">Sumenep</a>
+        <div class="collapse navbar-collapse align-content-center" id="probootstrap-menu">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Welcome</a></li>
+            <li class="nav-item"><a class="nav-link" href="../history.html">Sejarah</a></li>
+            <li class="nav-item active"><a class="nav-link" href="../city-guides.html">Destinasi</a></li>
+            <li class="nav-item"><a class="nav-link" href="../traditional-food.html">Makanan Khas</a></li>
+            <li class="nav-item"><a class="nav-link" href="../art-culture.html">Kesenian &amp; Budaya</a></li>
+            <li>
+              <button style="outline: none; cursor: pointer; color: rgba(255, 255, 255, 0.666); border: 0; background-color: rgba(255, 255, 255, 0)">
+                <i id="audio-status" class="fi fi-rr-volume-mute"></i>
+              </button>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- END nav -->
 
@@ -234,6 +234,33 @@
         <script src="../assets/js/select2.min.js"></script>
 
         <script src="../assets/js/main.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var audio = new Audio("../assets/images/art-culture/audio.mp3");
+              audio.volume = 0.05
+      
+              $('#audio-status').on("click",function(){
+                if($(this).hasClass('fi fi-rr-volume'))
+                {
+                  $(this).removeClass('fi fi-rr-volume');
+                  $(this).addClass('fi fi-rr-volume-mute');
+                  audio.pause();
+                }
+                else
+                {
+                  $(this).removeClass('fi fi-rr-volume-mute');
+                  $(this).addClass('fi fi-rr-volume');
+                  audio.play();
+                }
+              });
+      
+              audio.onended = function() {
+                audio.play()
+              };
+            });
+            
+          </script>
 </body>
 
 </html>
